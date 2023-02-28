@@ -1,0 +1,55 @@
+### User sign up endpoint
+POST http://localhost:9000/api/v1/user
+Content-Type: application/json
+
+{
+    "name":"Nilesh Vaidya",
+    "email":"fac@a.com",
+    "password":"pass123",
+    "role":"ADMIN"
+}
+
+### User signin endpoint 
+POST http://localhost:9000/api/v1/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"ask@gmail.com",
+    "password" : "1234"
+}
+
+### user logout ebdpoint
+DELETE http://localhost:9000/api/v1/user/logout HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza0BnbWFpbC5jb20iLCJpYXQiOjE2NzY4ODYxMTcsImV4cCI6MTY3Njk3MjUxN30.OdcFoK8VjsqvG2vnVI4AxklOAhHPm5QjUnSIXs-xr70
+
+### Get All Users
+GET http://localhost:9000/api/v1/admin/users HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza0BnbWFpbC5jb20iLCJpYXQiOjE2NzY2MjM2ODUsImV4cCI6MTY3NjcxMDA4NX0.Vp0hF_Nzhag6d7ohOwdijrI0uGvQcONi9gk_bc7EN7w
+
+### Get User
+GET http://localhost:9000/api/v1/admin/user/63edb64d3edf51025aee40d1 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza0BnbWFpbC5jb20iLCJpYXQiOjE2NzY4Nzc2NjQsImV4cCI6MTY3Njk2NDA2NH0.VBLFyHiP21PijveBuBp85p33u1nwFRckP1pcahg9s_A
+
+
+### Update Role
+POST  http://localhost:9000/api/v1/admin/update-role/63edb6778c039144b86491ef/MODERATOR HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza0BnbWFpbC5jb20iLCJpYXQiOjE2NzY4ODYyOTgsImV4cCI6MTY3Njk3MjY5OH0.WtrzgY3e5sk7ZtB8rzRbliHvwU4-K7c0S06tu5CNk0Y
+
+{
+    "id":"63edb6778c039144b86491ef",
+"role":"MODERATOR"
+}
+### Change Password
+POST  http://localhost:9000/api/v1/admin/update-password HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza0BnbWFpbC5jb20iLCJpYXQiOjE2NzczODc2NDIsImV4cCI6MTY3NzQ3NDA0Mn0.mpGdL9WGWJm-t0j_UfrvjIrEIVmxrm2bZWQD5EUua1w
+
+{
+    "id":"63edb6778c039144b86491ef",
+"password":"aaaaa"
+}
+
+### Delete User
+DELETE http://localhost:9000/api/v1/admin/user/63f5f30e73d6201abaad4051 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza0BnbWFpbC5jb20iLCJpYXQiOjE2NzcxMjY5NjcsImV4cCI6MTY3NzIxMzM2N30.qTmV2wRkxnYh0eaRZxUpnwHmAhY_h-U4odXERp6MA5M
